@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ButtonPlayground } from "./ButtonPlayground";
 import { ColorSwatches, RadiusSwatches } from "./TokenSwatches";
 
-export const metadata: Metadata = { title: "Playground · Designer Starter Kit" };
+export const metadata: Metadata = { title: "Playground · AI Native Designer Kit" };
 
 /*
  * /playground — 내가 만든 디자인 시스템을 눈으로 확인하고 눌러 보는 곳.

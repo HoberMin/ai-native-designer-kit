@@ -1,9 +1,18 @@
 @AGENTS.md
 
-# Designer Starter Kit
+# AI Native Designer Kit
 
-디자이너가 **Figma 디자인 시스템을 코드로 옮기고**, `/playground`에서 직접 눌러 보며 확인하고, **Vercel로 배포**하는 연습용 프로젝트예요.
+디자이너가 AI 네이티브하게 일하기 위한 출발점이에요.
+**Figma 디자인 시스템을 코드로 옮기고**, `/playground`에서 직접 눌러 보며 확인하고, **Vercel로 배포**해요.
+그리고 반복되는 일을 스킬·서브에이전트로 만들어 이 레포를 **사용자만의 템플릿**으로 키워 가요.
 Next.js(App Router) + Tailwind CSS v4.
+
+## 너의 역할
+
+- 사용자를 대신해 일하는 동시에, 사용자가 **자기 기준을 레포에 쌓도록** 돕는 파트너예요.
+- 사용자가 같은 종류의 부탁·지적을 반복하면 `docs/skill-backlog.md`에 적고(횟수 +1), 3회가 되면 “스킬로 만들어 둘까요?”라고 한 번 제안해요.
+- 사용자가 “앞으로는 이렇게 해”라고 하면 이 파일(`CLAUDE.md`)에 규칙으로 추가할지 물어요.
+- 이 파일의 규칙은 키트의 기본 제안이에요. 사용자가 바꾸자고 하면 바꿔요(안전 규칙 제외).
 
 ## 이 프로젝트의 사용자
 
@@ -32,7 +41,10 @@ Next.js(App Router) + Tailwind CSS v4.
 5. **컴포넌트 만들기** — `build-component` 스킬. 버튼부터, 하나씩.
 6. **맞는지 검사** — `grid-check` 스킬 → `figma-reviewer` 서브에이전트로 Figma 대조.
 7. **배포** — `ship` 스킬 (커밋 → 푸시 → Vercel).
-8. **나만의 스킬** — 반복되는 부탁이 생기면 `new-skill` 스킬.
+8. **나만의 스킬** — 반복되는 부탁이 생기면 `new-skill` 스킬. (가이드: `docs/1-skill-guide.md`, `docs/2-subagent-guide.md`)
+9. **나만의 템플릿** — `my-template` 스킬. (가이드: `docs/3-my-template.md`)
+
+1~7을 마치면 README의 “성장 경로”(Lv.1~5)를 보여 주고 지금 어느 단계인지 알려 줘요.
 
 ## 디자인 시스템 규칙
 
@@ -56,6 +68,7 @@ Next.js(App Router) + Tailwind CSS v4.
 | `scripts/check-design.mjs` | 4px·색 규칙 자동 검사 |
 | `.claude/skills/` | 스킬 (작업 설명서) |
 | `.claude/agents/` | 서브에이전트 (전문 동료) |
+| `docs/` | 스킬·서브에이전트·템플릿 가이드, `skill-backlog.md`(스킬 아이디어 메모) |
 
 ## Figma MCP 사용 원칙
 
@@ -75,7 +88,8 @@ Next.js(App Router) + Tailwind CSS v4.
 | `grid-check` | 스킬 | 4px 그리드·색 규칙 위반을 찾을 때 |
 | `playground-polish` | 스킬 | /playground 화면이 보기 불편할 때 |
 | `ship` | 스킬 | 커밋·푸시·Vercel 배포할 때 |
-| `new-skill` | 스킬 | 반복되는 부탁을 새 스킬로 만들 때 |
+| `new-skill` | 스킬 | 반복되는 부탁을 새 스킬·서브에이전트로 만들 때 |
+| `my-template` | 스킬 | 이 레포를 사용자만의 템플릿으로 정리할 때 |
 | `figma-reviewer` | 서브에이전트 | 만든 화면을 Figma와 나란히 대조 검수할 때 (읽기 전용) |
 
 새 스킬·서브에이전트를 만들면 이 표에 한 줄 추가해요. 비슷한 게 이미 있으면 새로 만들지 말고 기존 것을 고쳐요.

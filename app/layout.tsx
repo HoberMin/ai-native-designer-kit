@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Designer Starter Kit",
+  title: "AI Native Designer Kit",
   description: "Figma 기반 디자인 시스템을 코드로 만들고 /playground에서 확인해요",
 };
 

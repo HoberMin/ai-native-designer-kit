@@ -9,7 +9,8 @@ Claude가 단계를 마칠 때마다 체크해요. 직접 체크해도 돼요.
 - [ ] 5. 첫 컴포넌트 만들기 (build-component · 버튼)
 - [ ] 6. 맞는지 검사 (grid-check → figma-reviewer)
 - [ ] 7. 첫 배포 (ship · Vercel 주소 받기)
-- [ ] 8. 나만의 스킬 1개 만들기 (new-skill)
+- [ ] 8. 나만의 스킬 1개 만들기 (new-skill · docs/1-skill-guide.md)
+- [ ] 9. 나만의 템플릿으로 정리 (my-template · docs/3-my-template.md)
 
 ## 메모
 
