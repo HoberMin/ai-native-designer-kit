@@ -66,8 +66,8 @@ Next.js(App Router) + Tailwind CSS v4.
 
 `design-system/PROGRESS.md`를 읽고, 체크되지 않은 첫 단계부터 안내해요. 단계를 마치면 그 파일의 체크박스를 채워요.
 
-1. **환경 확인** — `node -v`, `git --version`, `gh auth status`. 없으면 설치 방법을 쉬운 말로 안내.
-2. **미리보기 띄우기** — `npm install` → `npm run dev` → 브라우저에서 `http://localhost:3000/playground` 열기 안내.
+1. **환경 확인** — `node -v`, `git --version`, `gh auth status`. 없으면 설치 방법을 쉬운 말로 안내. `git config user.name`·`user.email`이 비어 있으면 GitHub 계정 기준으로 설정해 줘요(이메일은 GitHub의 noreply 주소 권장).
+2. **미리보기 띄우기** — `npm install` → `npm run dev` → 브라우저에서 `http://localhost:3000/playground` 열기 안내. VS Code를 껐다 켜면 미리보기도 꺼지니, 사용자가 “미리보기 띄워줘”라고 하면 다시 켜요.
 3. **Figma 연결** — 위 “도구별 위치” 표의 Figma 로그인 방법으로 안내하고, figma가 연결됐는지 확인해요.
 4. **토큰 가져오기** — `figma-sync` 스킬.
 5. **컴포넌트 만들기** — `build-component` 스킬. 버튼부터, 하나씩.
@@ -86,7 +86,7 @@ Next.js(App Router) + Tailwind CSS v4.
 - 간격·크기는 **4px 그리드**(Tailwind 기본 스케일: `p-1`=4px, `p-2`=8px …). 2px은 아이콘·보더 같은 작은 요소만.
 - 컴포넌트에는 **색 직접 입력(#hex, rgb)과 임의값(`p-[3px]`)을 쓰지 않아요.**
 - Figma 값이 그리드에 안 맞으면(예: 3px) **코드에서 우회하지 말고** 사용자에게 알리고 “Figma에서 고칠지” 물어봐요. 고치는 곳은 항상 Figma예요.
-- 파일을 고칠 때마다 `scripts/check-design.mjs`가 자동으로 돌아요(훅). 오류가 나오면 사용자에게 쉬운 말로 알려요. 훅이 꺼져 있으면 작업을 마칠 때 `npm run check`를 직접 실행해요.
+- AI가 파일을 고칠 때마다 `scripts/check-design.mjs`가 자동으로 돌아요(훅). 사용자가 직접 고친 파일은 `npm run check`로 검사해요. 오류가 나오면 사용자에게 쉬운 말로 알려요. 훅이 꺼져 있으면 작업을 마칠 때 `npm run check`를 직접 실행해요.
 
 ## 폴더 지도
 
