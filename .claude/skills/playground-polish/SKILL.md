@@ -1,6 +1,6 @@
 ---
 name: playground-polish
-description: /playground 페이지가 디자이너가 보기에 불편하거나 확인하기 어려울 때 화면 구성을 다듬는 데 사용. "playground 보기 불편해", "상태별로 한눈에 보고 싶어", "다크 배경에서도 보고 싶어" 같은 요청에 쓴다.
+description: /playground 확인 페이지의 화면 구성(견본 배치, 상태 표, 배경 전환, 라벨)을 디자이너가 Figma와 대조하기 쉽게 다듬는다. 컴포넌트 자체는 고치지 않는다. "playground 보기 불편해", "상태별로 한눈에 보고 싶어", "다크 배경에서도 보고 싶어", "hover를 고정해서 보고 싶어" 같은 요청에 쓴다. 사용자가 /playground를 보며 불편함을 말하면 반드시 이 스킬을 쓴다.
 ---
 
 # Playground 다듬기

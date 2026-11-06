@@ -1,6 +1,6 @@
 ---
 name: figma-sync
-description: Figma Variables(색·모서리·간격 변수)를 app/globals.css의 디자인 토큰으로 가져올 때 사용. "토큰 가져와줘", "Figma 색 옮겨줘", "변수 동기화" 같은 요청에 쓴다.
+description: Figma Variables(색·모서리·간격 변수)를 읽어 app/globals.css의 디자인 토큰으로 옮기고, 그리드 밖 값을 표로 알려 준다. "토큰 가져와줘", "Figma 색 옮겨줘", "변수 동기화", "Figma에서 색 바꿨어" 같은 요청에 쓴다. 사용자가 스킬 이름을 말하지 않아도 Figma의 색·간격·모서리 값이 코드에 들어가거나 바뀌어야 하는 상황이면 반드시 이 스킬을 쓴다.
 ---
 
 # Figma 토큰 가져오기

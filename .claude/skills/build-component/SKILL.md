@@ -1,6 +1,6 @@
 ---
 name: build-component
-description: Figma 컴포넌트(버튼, 인풋, 칩 등)를 components/ui의 코드 컴포넌트로 만들거나 Figma 기준으로 다시 맞출 때 사용. 만든 컴포넌트는 /playground에 섹션으로 추가한다.
+description: Figma 컴포넌트(버튼, 인풋, 칩, 카드 등)를 components/ui의 코드 컴포넌트로 만들거나 Figma 기준으로 다시 맞추고, /playground에 확인 섹션을 추가한다. "이 버튼 만들어줘", "컴포넌트로 옮겨줘", "Figma랑 똑같이 맞춰줘" 같은 요청에 쓴다. 사용자가 Figma 링크와 함께 UI 조각을 코드로 만들어 달라고 하면 스킬 이름을 말하지 않아도 반드시 이 스킬을 쓴다.
 ---
 
 # 컴포넌트 만들기

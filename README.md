@@ -96,5 +96,6 @@ AI 네이티브하게 일한다는 건 AI에게 결과물을 시키는 게 아�
 npm install      # 처음 한 번
 npm run dev      # 미리보기: http://localhost:3000/playground
 npm run check    # 4px 그리드·색 규칙 검사
+npm run check:skills  # 스킬·서브에이전트 규격 검사 (Agent Skills 표준)
 npm run build    # 배포 전 확인
 ```
