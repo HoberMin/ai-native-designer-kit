@@ -1,10 +1,10 @@
 # 진행 체크리스트
 
-Claude가 단계를 마칠 때마다 체크해요. 직접 체크해도 돼요.
+AI(Claude Code·Codex)가 단계를 마칠 때마다 체크해요. 직접 체크해도 돼요.
 
 - [ ] 1. 환경 확인 (node, git, gh 로그인)
 - [ ] 2. 미리보기 띄우기 (localhost:3000/playground)
-- [ ] 3. Figma 연결 (/mcp 에서 figma connected)
+- [ ] 3. Figma 연결 (Claude Code: /mcp 에서 figma connected · Codex: codex mcp login figma)
 - [ ] 4. 토큰 가져오기 (figma-sync)
 - [ ] 5. 첫 컴포넌트 만들기 (build-component · 버튼)
 - [ ] 6. 맞는지 검사 (grid-check → figma-reviewer)

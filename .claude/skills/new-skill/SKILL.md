@@ -5,14 +5,14 @@ description: 사용자가 반복하는 부탁이나 작업 순서를 표준 규�
 
 # 새 스킬 · 서브에이전트 만들기
 
-사람용 설명은 `docs/1-skill-guide.md`, `docs/2-subagent-guide.md`에 있어요. 아래 순서는 Claude용이에요.
+사람용 설명은 `docs/1-skill-guide.md`, `docs/2-subagent-guide.md`에 있어요. 아래 순서는 AI(Claude Code·Codex)용이에요.
 
 ## 순서
 
-1. **중복 확인** — `.claude/skills/`, `.claude/agents/`, `CLAUDE.md` 표를 봐요. 비슷한 게 있으면 **새로 만들지 말고 기존 것을 고치자고** 제안해요.
+1. **중복 확인** — `.claude/skills/`, `.claude/agents/`, `AGENTS.md` 표를 봐요. 비슷한 게 있으면 **새로 만들지 말고 기존 것을 고치자고** 제안해요.
 2. **아이디어가 없으면** — `references/starter-ideas.md`에서 사용자 상황에 맞는 것 2~3개를 골라 제안해요.
 3. **종류 고르기** — 이유와 함께 하나를 제안해요.
-   - 매번 지켜야 하는 짧은 규칙 → `CLAUDE.md`에 한 줄
+   - 매번 지켜야 하는 짧은 규칙 → `AGENTS.md`에 한 줄
    - 순서가 있는 반복 작업, 중간에 같이 보며 고침 → **스킬** (대부분 여기)
    - 많이 읽고 오래 걸림, 다른 눈으로 검수, 결과만 보면 됨 → **서브에이전트** (처음엔 읽기 전용)
 4. **세 가지 질문** (대화에서 이미 나왔으면 생략)
@@ -23,9 +23,10 @@ description: 사용자가 반복하는 부탁이나 작업 순서를 표준 규�
 6. **저장**
    - 스킬: `.claude/skills/<이름>/SKILL.md` (폴더 이름 = name)
    - 서브에이전트: `.claude/agents/<이름>.md` (파일 이름 = name)
-7. **규격 검사** — `npm run check:skills`. 오류가 있으면 고쳐요.
-8. **등록** — `CLAUDE.md`의 “스킬과 서브에이전트” 표에 한 줄. `docs/skill-backlog.md`에 있던 항목이면 상태를 “완료”로.
-9. **써보기** — 사용자에게 시험 문장 두 개를 드려요.
+   - 원본은 항상 `.claude/` 쪽이에요. Codex에서 작업 중이어도 여기에 저장해요.
+7. **규격 검사와 동기화** — `npm run check:skills`로 규격을 검사하고, `npm run sync`로 Codex용 복사본(`.agents/skills`, `.codex/agents`)을 만들어요.
+8. **등록** — `AGENTS.md`의 “스킬과 서브에이전트” 표에 한 줄. `docs/skill-backlog.md`에 있던 항목이면 상태를 “완료”로.
+9. **써보기** — 이름으로 부르는 법(Claude Code `/<이름>`, Codex `$<이름>`)과 시험 문장 두 개를 드려요.
    - 꺼내져야 하는 말 (description에 적은 말)
    - 꺼내지면 안 되는 비슷한 말
    결과가 이상하면 말로 고치게 해요: “3번 단계는 빼줘”, “이럴 때도 쓰게 해줘”. 잘 안 꺼내지면 description을 더 구체적으로 고쳐요.

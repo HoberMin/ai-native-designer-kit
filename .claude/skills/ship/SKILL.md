@@ -16,7 +16,7 @@ description: 작업한 내용을 검사 → 커밋 → 푸시 → PR 순서로 �
 
 ## 처음 한 번: Vercel 연결 (사용자가 브라우저에서 직접)
 
-Claude는 계정 생성·로그인을 대신하지 않아요. 아래를 안내만 해요.
+AI는 계정 생성·로그인을 대신하지 않아요. 아래를 안내만 해요.
 
 1. vercel.com → **Continue with GitHub**로 가입 (Hobby 무료 플랜)
 2. **Add New… › Project** → 이 레포 옆 **Import**

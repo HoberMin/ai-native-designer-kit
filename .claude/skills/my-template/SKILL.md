@@ -11,7 +11,7 @@ description: 사용자의 성장 단계(Lv.1~5)를 알려 주고, 이 레포를 
 
 README의 성장 경로(Lv.1~5) 기준으로 현재 단계를 판단해 알려 줘요.
 - `design-system/PROGRESS.md` 1~7 완료 여부 → Lv.1
-- `CLAUDE.md`에 키트 기본 외 규칙이 있는지 → Lv.2
+- `AGENTS.md`에 키트 기본 외 규칙이 있는지 → Lv.2
 - 키트 기본 7개 외 스킬이 있는지 → Lv.3
 - `figma-reviewer` 외 서브에이전트가 있는지 → Lv.4
 Lv.3 미만이면 “템플릿으로 만들기 전에 스킬 하나는 만들어 보길 권해요”라고 제안하되, 사용자가 원하면 진행해요.
@@ -49,7 +49,7 @@ Lv.3 미만이면 “템플릿으로 만들기 전에 스킬 하나는 만들어
 1. GitHub 내 레포 › **Settings**
 2. General 맨 위 **Template repository** 체크
 3. 레포 첫 화면에 **Use this template** 버튼이 생겼는지 확인
-4. 동료에게 레포 주소와 “Use this template으로 시작해서 Claude에게 ‘시작하자’” 안내 문구를 전달
+4. 동료에게 레포 주소와 “Use this template으로 시작해서 Claude Code나 Codex에게 ‘시작하자’” 안내 문구를 전달
 
 ## 규칙
 

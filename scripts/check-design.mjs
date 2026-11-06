@@ -104,8 +104,9 @@ if (process.argv.includes("--hook")) {
     } catch {
       process.exit(0);
     }
-    if (!filePath) process.exit(0);
-    const errors = checkFile(filePath).filter((f) => f.level === "오류");
+    // 파일 경로를 알 수 없는 도구(예: Codex의 패치 적용)는 프로젝트 전체를 검사해요
+    const targets = filePath ? [filePath] : SCAN_DIRS.flatMap((d) => walk(join(ROOT, d)));
+    const errors = targets.flatMap(checkFile).filter((f) => f.level === "오류");
     if (errors.length === 0) process.exit(0);
     process.stderr.write("디자인 규칙 검사에서 오류가 나왔어요. 코드에서 우회하지 말고, 사용자에게 쉬운 말로 알려 주고 Figma 값부터 확인하세요.\n");
     print(errors, process.stderr);

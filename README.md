@@ -7,7 +7,8 @@ AI 네이티브하게 일한다는 건 AI에게 결과물을 시키는 게 아�
 이 레포는 그 기준을 담을 그릇이에요. 처음엔 우리가 넣어 둔 기준으로 시작하고,
 쓰면서 내 기준으로 바꿔 가다 보면 결국 **나만의 템플릿**이 돼요.
 
-> 코드를 몰라도 돼요. VS Code의 Claude 패널에 **“시작하자”** 라고 보내면 Claude가 순서대로 안내해요.
+> 코드를 몰라도 돼요. VS Code의 **Claude Code** 또는 **Codex** 패널에 **“시작하자”** 라고 보내면 AI가 순서대로 안내해요.
+> 두 도구 모두 지원해요. 규칙·스킬은 하나로 관리되고 양쪽에서 똑같이 쓰여요.
 
 ---
 
@@ -15,7 +16,7 @@ AI 네이티브하게 일한다는 건 AI에게 결과물을 시키는 게 아�
 
 | 지금까지 | 이 레포로 |
 |---|---|
-| Figma에서 넘기고, 코드는 개발자가 옮겨요 | 내가 Claude와 대화하며 직접 코드로 옮겨요 |
+| Figma에서 넘기고, 코드는 개발자가 옮겨요 | 내가 AI와 대화하며 직접 코드로 옮겨요 |
 | 3px 같은 어긋남을 개발 단계에서 늦게 발견해요 | 파일을 고칠 때마다 자동 검사가 바로 알려 줘요 |
 | 구현된 화면은 배포돼야 볼 수 있어요 | `/playground`에서 내 컴포넌트를 바로 눌러 봐요 |
 | 같은 피드백을 매번 말로 반복해요 | 반복되는 부탁은 **스킬**로 굳혀 다음부터 한 마디로 |
@@ -34,11 +35,24 @@ AI 네이티브하게 일한다는 건 AI에게 결과물을 시키는 게 아�
 
 1. 이 페이지 오른쪽 위 **Use this template › Create a new repository** → 내 계정에 레포 만들기
 2. 내 레포 화면에서 초록색 **Code** 버튼 › HTTPS 주소 복사
-3. VS Code에서 빈 작업 폴더를 열고 Claude 패널에:
+3. VS Code에서 빈 작업 폴더를 열고 Claude Code(또는 Codex) 패널에:
    `이 레포를 여기에 클론하고 VS Code로 열어줘: [붙여넣기]`
-4. 클론된 폴더를 연 뒤 Claude 패널에: **`시작하자`**
+4. 클론된 폴더를 연 뒤 같은 패널에: **`시작하자`**
 
-준비물(VS Code, Git, Node.js, Claude Code 확장, Claude 구독)은 함께 받은 가이드 장표를 따라 설치해요.
+준비물(VS Code, Git, Node.js, 그리고 Claude Code 확장 + Claude 구독 **또는** Codex 확장 + ChatGPT 계정)은 함께 받은 가이드 장표를 따라 설치해요. 장표는 Claude Code 편과 Codex 편이 따로 있어요.
+
+## Claude Code와 Codex
+
+| | Claude Code | Codex |
+|---|---|---|
+| 규칙서 | `CLAUDE.md` → `AGENTS.md` | `AGENTS.md` |
+| 스킬 | `.claude/skills/` (원본) | `.agents/skills/` (자동 복사본) |
+| 서브에이전트 | `.claude/agents/*.md` (원본) | `.codex/agents/*.toml` (자동 생성) |
+| 스킬 부르기 | `/스킬이름` | `$스킬이름` |
+| Figma 연결 | `.mcp.json` → `/mcp`에서 로그인 | `.codex/config.toml` → `codex mcp login figma` |
+| 자동 검사 훅 | `.claude/settings.json` | `.codex/hooks.json` (처음에 `/hooks`에서 신뢰) |
+
+원본은 `.claude/` 하나예요. `npm run sync`가 Codex용 복사본을 만들고, 파일을 고치면 훅이 자동으로 맞춰요.
 
 ## 성장 경로
 
@@ -47,8 +61,8 @@ AI 네이티브하게 일한다는 건 AI에게 결과물을 시키는 게 아�
 | 단계 | 하는 일 | 다 됐다는 신호 |
 |---|---|---|
 | Lv.1 따라 하기 | “시작하자”로 1~7단계 완주 | Vercel 주소에서 내 버튼이 눌려요 |
-| Lv.2 규칙 고치기 | `CLAUDE.md`를 내 팀 기준으로 수정 | Claude가 내 규칙대로 말해요 |
-| Lv.3 스킬 만들기 | 반복 부탁 하나를 스킬로 | `/내스킬`로 한 마디에 끝나요 |
+| Lv.2 규칙 고치기 | `AGENTS.md`를 내 팀 기준으로 수정 | AI가 내 규칙대로 말해요 |
+| Lv.3 스킬 만들기 | 반복 부탁 하나를 스킬로 | `/내스킬`(Codex는 `$내스킬`) 한 마디에 끝나요 |
 | Lv.4 동료 만들기 | 검토 일을 서브에이전트로 | 결과 보고만 받아요 |
 | Lv.5 내 템플릿 | 내 레포를 템플릿으로 공개 | 동료가 내 레포에서 시작해요 |
 
@@ -61,14 +75,14 @@ AI 네이티브하게 일한다는 건 AI에게 결과물을 시키는 게 아�
 
 | 위치 | 무엇 |
 |---|---|
-| `CLAUDE.md` | Claude가 항상 먼저 읽는 규칙서 (진행 순서, 디자인 규칙, 안전 규칙) |
+| `AGENTS.md` | AI가 항상 먼저 읽는 규칙서 (진행 순서, 디자인 규칙, 안전 규칙). Claude Code는 `CLAUDE.md`가 이 파일을 불러와요 |
 | `app/globals.css` | 디자인 토큰 (Figma Variables가 들어갈 곳) |
 | `components/ui/Button.tsx` | 예시 컴포넌트 |
 | `app/playground/` | `/playground` 확인 페이지 |
-| `.claude/skills/` | 스킬 7개 (아래 표) |
-| `.claude/agents/figma-reviewer.md` | Figma 대조 검수 서브에이전트 (읽기 전용) |
-| `.claude/settings.json` | 파일을 고칠 때마다 4px·색 규칙을 자동 검사하는 훅 |
-| `.mcp.json` | Figma MCP 서버 연결 설정 |
+| `.claude/skills/` | 스킬 7개 원본 (아래 표) · Codex용 복사본은 `.agents/skills/` |
+| `.claude/agents/figma-reviewer.md` | Figma 대조 검수 서브에이전트 (읽기 전용) · Codex용은 `.codex/agents/` |
+| `.claude/settings.json`, `.codex/hooks.json` | 파일을 고칠 때마다 4px·색 규칙 검사 + 동기화하는 훅 |
+| `.mcp.json`, `.codex/config.toml` | Figma MCP 서버 연결 설정 |
 | `scripts/check-design.mjs` | 규칙 검사 스크립트 (`npm run check`) |
 | `design-system/PROGRESS.md` | 진행 체크리스트 |
 | `docs/` | 스킬·서브에이전트·템플릿 가이드, 스킬 아이디어 메모 |
@@ -90,12 +104,13 @@ AI 네이티브하게 일한다는 건 AI에게 결과물을 시키는 게 아�
 
 토큰만 쓰고, 4px 그리드를 지키고, **Figma와 다르면 고치는 곳은 항상 Figma**.
 
-## 명령어 (Claude가 대신 실행해요)
+## 명령어 (AI가 대신 실행해요)
 
 ```bash
 npm install      # 처음 한 번
 npm run dev      # 미리보기: http://localhost:3000/playground
 npm run check    # 4px 그리드·색 규칙 검사
 npm run check:skills  # 스킬·서브에이전트 규격 검사 (Agent Skills 표준)
+npm run sync     # Claude Code ↔ Codex 스킬·서브에이전트 동기화
 npm run build    # 배포 전 확인
 ```
