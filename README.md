@@ -52,7 +52,7 @@ AI 네이티브하게 일한다는 건 AI에게 결과물을 시키는 게 아�
 
 | | Claude Code | Codex |
 |---|---|---|
-| 규칙서 | `CLAUDE.md` → `AGENTS.md` | `AGENTS.md` |
+| 사내 규정 | `CLAUDE.md` → `AGENTS.md` | `AGENTS.md` |
 | 스킬 | `.claude/skills/` (원본) | `.agents/skills/` (자동 복사본) |
 | 서브에이전트 | `.claude/agents/*.md` (원본) | `.codex/agents/*.toml` (자동 생성) |
 | 스킬 부르기 | `/스킬이름` | `$스킬이름` |
@@ -82,7 +82,7 @@ AI 네이티브하게 일한다는 건 AI에게 결과물을 시키는 게 아�
 
 | 위치 | 무엇 |
 |---|---|
-| `AGENTS.md` | AI가 항상 먼저 읽는 규칙서 (진행 순서, 디자인 규칙, 안전 규칙). Claude Code는 `CLAUDE.md`가 이 파일을 불러와요 |
+| `AGENTS.md` | AI(팀장)가 항상 먼저 읽는 사내 규정 (진행 순서, 디자인 규칙, 안전 규칙). Claude Code는 `CLAUDE.md`가 이 파일을 불러와요 |
 | `app/globals.css` | 디자인 토큰 (Figma Variables가 들어갈 곳) |
 | `components/ui/Button.tsx` | 예시 컴포넌트 |
 | `app/playground/` | `/playground` 디자인 시스템 확인 페이지 |

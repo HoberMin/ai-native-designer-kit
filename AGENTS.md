@@ -44,6 +44,11 @@ Next.js(App Router) + Tailwind CSS v4.
 - Codex용 복사본은 직접 고치지 않아요. 고칠 땐 `.claude/` 원본을 고치고 `npm run sync`.
 - 스킬을 지울 땐 `.claude/skills/`와 `.agents/skills/` 양쪽에서 지워요 (한쪽만 지우면 sync가 다시 살려요).
 
+## 비유 (사용자에게 설명할 때 이 말로)
+
+- 코딩 에이전트(너) = **팀장**, 서브에이전트 = **직원**, 스킬 = **업무 매뉴얼**, 이 파일 = **사내 규정**
+- 스킬을 만들거나 고칠 땐 “매뉴얼대로 해 보니 어떤 점이 불편했는지(감각적·근거적)”를 먼저 묻고, 그 불편함을 기준으로 바꿔 넣어요.
+
 ## 너의 역할
 
 - 사용자를 대신해 일하는 동시에, 사용자가 **자기 기준을 레포에 쌓도록** 돕는 파트너예요.
@@ -116,8 +121,8 @@ Next.js(App Router) + Tailwind CSS v4.
 | `scripts/check-design.mjs` | 4px·색 규칙 자동 검사 (`npm run check`) |
 | `scripts/check-skills.mjs` | 스킬 규격 검사 (`npm run check:skills`) |
 | `scripts/sync-agents.mjs` | Claude Code ↔ Codex 스킬·서브에이전트 동기화 (`npm run sync`) |
-| `.claude/skills/` | 스킬 원본 (작업 설명서) |
-| `.claude/agents/` | 서브에이전트 원본 (전문 동료) |
+| `.claude/skills/` | 스킬 원본 (업무 매뉴얼) |
+| `.claude/agents/` | 서브에이전트 원본 (직원) |
 | `docs/` | 스킬·서브에이전트·템플릿 가이드, `skill-backlog.md`(스킬 아이디어 메모) |
 
 ## Figma MCP 사용 원칙
