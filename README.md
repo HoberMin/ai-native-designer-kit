@@ -7,6 +7,13 @@ AI 네이티브하게 일한다는 건 AI에게 결과물을 시키는 게 아�
 이 레포는 그 기준을 담을 그릇이에요. 처음엔 우리가 넣어 둔 기준으로 시작하고,
 쓰면서 내 기준으로 바꿔 가다 보면 결국 **나만의 템플릿**이 돼요.
 
+## 이 키트로 도달할 두 가지 목표
+
+1. **팀 Figma(디자인 시스템 + 프로토타입 + 유저플로우)를 바탕으로, 배포된 링크에서 유저플로우를 직접 테스트한다.** (더미데이터 포함)
+2. **스킬·서브에이전트를 이해하고 고쳐 보며, 내 업무 과정에서 무엇을 바꿀 수 있을지 찾는다.**
+
+> 에디터는 **VS Code 또는 Cursor** 중 가진 걸 쓰면 돼요.
+
 > 코드를 몰라도 돼요. VS Code의 **Claude Code** 또는 **Codex** 패널에 **“시작하자”** 라고 보내면 AI가 순서대로 안내해요.
 > 두 도구 모두 지원해요. 규칙·스킬은 하나로 관리되고 양쪽에서 똑같이 쓰여요.
 
@@ -60,7 +67,7 @@ AI 네이티브하게 일한다는 건 AI에게 결과물을 시키는 게 아�
 
 | 단계 | 하는 일 | 다 됐다는 신호 |
 |---|---|---|
-| Lv.1 따라 하기 | “시작하자”로 1~7단계 완주 | Vercel 주소에서 내 버튼이 눌려요 |
+| Lv.1 따라 하기 | “시작하자”로 1~10단계 완주 | 배포 링크에서 유저플로우를 테스트했어요 |
 | Lv.2 규칙 고치기 | `AGENTS.md`를 내 팀 기준으로 수정 | 같은 지적을 두 번 하지 않아요 |
 | Lv.3 스킬 만들기 | 반복 부탁 하나를 스킬로 | `/내스킬`(Codex는 `$내스킬`) 한 마디에 끝나요 |
 | Lv.4 동료 만들기 | 검토 일을 서브에이전트로 | 결과 보고만 받아요 |
@@ -78,8 +85,10 @@ AI 네이티브하게 일한다는 건 AI에게 결과물을 시키는 게 아�
 | `AGENTS.md` | AI가 항상 먼저 읽는 규칙서 (진행 순서, 디자인 규칙, 안전 규칙). Claude Code는 `CLAUDE.md`가 이 파일을 불러와요 |
 | `app/globals.css` | 디자인 토큰 (Figma Variables가 들어갈 곳) |
 | `components/ui/Button.tsx` | 예시 컴포넌트 |
-| `app/playground/` | `/playground` 확인 페이지 |
-| `.claude/skills/` | 스킬 7개 원본 (아래 표) · Codex용 복사본은 `.agents/skills/` |
+| `app/playground/` | `/playground` 디자인 시스템 확인 페이지 |
+| `app/prototype/` | `/prototype` 유저플로우 테스트 페이지 |
+| `mocks/` | 더미데이터 |
+| `.claude/skills/` | 스킬 10개 원본 (아래 표) · Codex용 복사본은 `.agents/skills/` |
 | `.claude/agents/figma-reviewer.md` | Figma 대조 검수 서브에이전트 (읽기 전용) · Codex용은 `.codex/agents/` |
 | `.claude/settings.json`, `.codex/hooks.json` | AI가 파일을 고칠 때마다 4px·색 규칙 검사 + 동기화하는 훅 |
 | `.mcp.json`, `.codex/config.toml` | Figma MCP 서버 연결 설정 |
@@ -97,6 +106,9 @@ AI 네이티브하게 일한다는 건 AI에게 결과물을 시키는 게 아�
 | `playground-polish` | /playground를 보기 편하게 |
 | `ship` | 커밋·푸시·Vercel 배포 |
 | `new-skill` | 반복되는 부탁을 새 스킬·서브에이전트로 |
+| `build-screen` | Figma 화면을 프로토타입으로 만들고 유저플로우대로 연결 |
+| `dummy-data` | 화면을 채울 더미데이터 |
+| `flow-check` | 배포 링크에서 유저플로우 테스트·결과 정리 |
 | `my-template` | 이 레포를 나만의 템플릿으로 정리 |
 | `figma-reviewer` (서브에이전트) | Figma와 나란히 대조 검수 |
 

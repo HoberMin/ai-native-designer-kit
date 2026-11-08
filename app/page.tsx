@@ -12,12 +12,20 @@ export default function Home() {
       <p className="text-lg leading-8 text-fg-subtle">
         VS Code의 Claude 패널에 <b className="text-fg">“시작하자”</b>라고 보내면 Claude가 다음 할 일을 안내해요.
       </p>
-      <Link
-        href="/playground"
-        className="inline-flex h-12 w-fit items-center rounded-md bg-primary px-5 font-semibold text-on-primary hover:bg-primary-pressed"
-      >
-        /playground 열기
-      </Link>
+      <div className="flex flex-wrap gap-3">
+        <Link
+          href="/prototype"
+          className="inline-flex h-12 items-center rounded-md bg-primary px-5 font-semibold text-on-primary hover:bg-primary-pressed"
+        >
+          프로토타입 테스트
+        </Link>
+        <Link
+          href="/playground"
+          className="inline-flex h-12 items-center rounded-md bg-surface-subtle px-5 font-semibold text-fg hover:bg-border"
+        >
+          디자인 시스템 보기
+        </Link>
+      </div>
     </main>
   );
 }

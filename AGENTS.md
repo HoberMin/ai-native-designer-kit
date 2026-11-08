@@ -15,10 +15,19 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 그리고 반복되는 일을 스킬·서브에이전트로 만들어 이 레포를 **사용자만의 템플릿**으로 키워 가요.
 Next.js(App Router) + Tailwind CSS v4.
 
+## 이 키트의 두 가지 목표
+
+1. **팀 Figma(디자인 시스템 + 프로토타입 + 유저플로우)를 바탕으로, 배포된 링크에서 유저플로우를 테스트할 수 있다.** (더미데이터 포함)
+2. **스킬·서브에이전트를 이해하고 직접 고쳐 보며, 내 업무 과정에서 무엇을 바꿀 수 있을지 생각해 본다.**
+
+모든 안내는 이 두 목표로 이어지게 해요. 사용자가 길을 잃으면 지금 단계가 어느 목표의 어디쯤인지 알려 줘요.
+
 이 파일은 **Claude Code와 Codex가 함께 읽는 규칙서**예요. (Claude Code는 `CLAUDE.md`가 이 파일을 불러와요.)
 규칙을 추가할 땐 이 파일에 적어요.
 
 ## 도구별 위치
+
+에디터는 **VS Code 또는 Cursor** 중 가진 걸 써요. 둘 다 같은 확장(Claude Code 또는 Codex)을 설치해서 써요.
 
 | | Claude Code | Codex |
 |---|---|---|
@@ -72,11 +81,14 @@ Next.js(App Router) + Tailwind CSS v4.
 4. **토큰 가져오기** — `figma-sync` 스킬.
 5. **컴포넌트 만들기** — `build-component` 스킬. 버튼부터, 하나씩.
 6. **맞는지 검사** — `grid-check` 스킬 → `figma-reviewer` 서브에이전트로 Figma 대조.
-7. **배포** — `ship` 스킬 (커밋 → 푸시 → Vercel).
-8. **나만의 스킬** — 반복되는 부탁이 생기면 `new-skill` 스킬. (가이드: `docs/1-skill-guide.md`, `docs/2-subagent-guide.md`)
-9. **나만의 템플릿** — `my-template` 스킬. (가이드: `docs/3-my-template.md`)
+7. **프로토타입 화면** — `build-screen` 스킬. 유저플로우를 먼저 표로 정하고 화면을 하나씩.
+8. **더미데이터** — `dummy-data` 스킬. 화면을 그럴듯한 데이터로 채우기.
+9. **배포** — `ship` 스킬 (커밋 → 푸시 → PR → 머지 → Vercel).
+10. **유저플로우 테스트** — `flow-check` 스킬. 배포 링크에서 처음부터 끝까지, 휴대폰으로도.
+11. **나만의 스킬** — 반복되는 부탁이 생기면 `new-skill` 스킬. (가이드: `docs/1-skill-guide.md`, `docs/2-subagent-guide.md`)
+12. **내 업무 돌아보기 · 나만의 템플릿** — `my-template` 스킬. (가이드: `docs/3-my-template.md`)
 
-1~7을 마치면 README의 “성장 경로”(Lv.1~5)를 보여 주고 지금 어느 단계인지 알려 줘요.
+1~10은 목표 1, 11~12는 목표 2예요. 10을 마치면 README의 “성장 경로”(Lv.1~5)를 보여 주고 지금 어느 단계인지 알려 줘요.
 
 ## 디자인 시스템 규칙
 
@@ -94,7 +106,11 @@ Next.js(App Router) + Tailwind CSS v4.
 |---|---|
 | `app/globals.css` | 디자인 토큰 (Figma Variables) |
 | `components/ui/` | 컴포넌트 (Figma 컴포넌트 1개 = 파일 1개) |
-| `app/playground/` | `/playground` 확인 페이지 |
+| `app/playground/` | `/playground` 디자인 시스템 확인 페이지 |
+| `app/prototype/` | 프로토타입 화면 (`/prototype`이 유저플로우 목록) |
+| `prototype/screens.ts` | 유저플로우별 화면 목록 |
+| `mocks/` | 더미데이터 |
+| `design-system/flow-test.md` | 유저플로우 테스트 기록 (flow-check가 만들어요) |
 | `design-system/PROGRESS.md` | 진행 체크리스트 |
 | `design-system/figma-log.md` | Figma에서 가져온 값 기록 (MCP 호출 아끼기용) |
 | `scripts/check-design.mjs` | 4px·색 규칙 자동 검사 (`npm run check`) |
@@ -121,7 +137,10 @@ Next.js(App Router) + Tailwind CSS v4.
 | `build-component` | 스킬 | Figma 컴포넌트를 코드 컴포넌트로 만들 때 |
 | `grid-check` | 스킬 | 4px 그리드·색 규칙 위반을 찾을 때 |
 | `playground-polish` | 스킬 | /playground 화면이 보기 불편할 때 |
+| `build-screen` | 스킬 | Figma 화면을 프로토타입 화면으로 만들고 유저플로우대로 연결할 때 |
+| `dummy-data` | 스킬 | 화면에 넣을 더미데이터가 필요할 때 |
 | `ship` | 스킬 | 커밋·푸시·Vercel 배포할 때 |
+| `flow-check` | 스킬 | 배포 링크에서 유저플로우를 테스트하고 결과를 정리할 때 |
 | `new-skill` | 스킬 | 반복되는 부탁을 새 스킬·서브에이전트로 만들 때 |
 | `my-template` | 스킬 | 이 레포를 사용자만의 템플릿으로 정리할 때 |
 | `figma-reviewer` | 서브에이전트 | 만든 화면을 Figma와 나란히 대조 검수할 때 (읽기 전용) |
